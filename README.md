@@ -82,6 +82,11 @@ Known working setup:
 
 The Gradle wrapper included in the repository should be used.
 
+Build with the included Gradle wrapper:
+
+```powershell
+.\gradlew.bat clean assembleDebug --no-daemon
+
 ## Legacy Google Maps API v1 dependency
 
 AirCasting 1.5.10 depends on the obsolete Google Maps API v1 `maps.jar`.
@@ -93,4 +98,18 @@ Android SDK package, verify its integrity and extract the required JAR.
 
 From the repository root, run:
 .\scripts\fetch-google-maps-v1.ps1
+
+The script creates:
+
+`libs/maps-7_r1.jar`
+
+Expected SHA-1:
+
+`c49be8f6bab271911c80bee6d571bf107d29a369`
+
+Expected size:
+
+`22048 bytes`
+
+The JAR is ignored by Git and is not redistributed in this repository.
 
