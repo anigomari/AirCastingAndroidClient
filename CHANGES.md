@@ -1,6 +1,6 @@
 # AirBeam1 compatibility changes
 
-BASE
+# BASE
 
 - Original repository: HabitatMap/AirCastingAndroidClient
 - Base version: release-1.5.10
@@ -8,7 +8,7 @@ BASE
 
 This file documents the changes made in this compatibility fork.
 
-BUILD SYSTEM CHANGES
+# BUILD SYSTEM CHANGES
 
 The original project relied on repositories and dependencies that are no longer available
 in their original form.
@@ -36,7 +36,7 @@ implementation("com.google.android.libraries.places:places:1.1.0") {
 
 implementation 'com.android.volley:volley:1.2.1'
 
-GOOGLE MAPS API V1 DEPENDENCY
+# GOOGLE MAPS API V1 DEPENDENCY
 
 The original dependency:
 
@@ -51,14 +51,15 @@ implementation files('libs/maps-7_r1.jar')
 The JAR itself is not included in this repository.
 
 It can be obtained with:
-
+```powershell
 .\scripts\fetch-google-maps-v1.ps1
+```
 
 Expected SHA-1:
 
 c49be8f6bab271911c80bee6d571bf107d29a369
 
-LEGACY GOOGLE MAPS RESOURCE REFERENCES
+# LEGACY GOOGLE MAPS RESOURCE REFERENCES
 
 The original project expects Google Maps API key resources during resource linking.
 
@@ -69,7 +70,7 @@ These placeholder values were added:
 
 These are intentionally not valid API keys.
 
-GRAPH VIEW COMPATIBILITY
+# GRAPH VIEW COMPATIBILITY
 
 The original activity hierarchy caused the Graph screen to inherit indirectly from the obsolete
 Google Maps API v1 MapActivity.
@@ -98,7 +99,7 @@ The obsolete isRouteDisplayed() override was also removed.
 
 This allows the Graph screen to work without instantiating the legacy Google Maps activity.
 
-AIRBEAM1 SUPPORT
+# AIRBEAM1 SUPPORT
 
 The original Bluetooth Classic / RFCOMM SPP implementation was preserved.
 
@@ -116,6 +117,6 @@ Channels tested:
 - AirBeam-F
 - AirBeam-RH
 
-KNOWN LIMITATION
+# KNOWN LIMITATION
 
 The original Map view is not restored and should be considered unsupported.
