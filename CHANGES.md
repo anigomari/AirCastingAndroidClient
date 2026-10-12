@@ -36,7 +36,7 @@ implementation("com.google.android.libraries.places:places:1.1.0") {
 
 implementation 'com.android.volley:volley:1.2.1'
 
-# GOOGLE MAPS API V1 DEPENDENCY
+## GOOGLE MAPS API V1 DEPENDENCY
 
 The original dependency:
 
