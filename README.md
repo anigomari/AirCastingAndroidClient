@@ -86,6 +86,7 @@ Build with the included Gradle wrapper:
 
 ```powershell
 .\gradlew.bat clean assembleDebug --no-daemon
+```
 
 ## Legacy Google Maps API v1 dependency
 
@@ -97,7 +98,9 @@ A helper PowerShell script is provided to retrieve the historical Google APIs
 Android SDK package, verify its integrity and extract the required JAR.
 
 From the repository root, run:
+```powershell
 .\scripts\fetch-google-maps-v1.ps1
+```
 
 The script creates:
 
