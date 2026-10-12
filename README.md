@@ -68,26 +68,6 @@ Tested views:
 - Dashboard
 - Graph
 
-## Build requirements
-
-This project is based on an old Android build environment.
-
-Known working setup:
-
-- Java 8
-- Gradle 4.10.1
-- Android Gradle Plugin 3.3.2
-- Android SDK Platform 26
-- Android Build Tools 28.0.3
-
-The Gradle wrapper included in the repository should be used.
-
-Build with the included Gradle wrapper:
-
-```powershell
-.\gradlew.bat clean assembleDebug --no-daemon
-```
-
 ## Legacy Google Maps API v1 dependency
 
 AirCasting 1.5.10 depends on the obsolete Google Maps API v1 `maps.jar`.
@@ -109,6 +89,32 @@ The script creates:
 Expected SHA-1:
 
 `c49be8f6bab271911c80bee6d571bf107d29a369`
+
+Expected size:
+
+`22048 bytes`
+
+The JAR is ignored by Git and is not redistributed in this repository.
+
+## Build requirements
+
+This project is based on an old Android build environment.
+
+Known working setup:
+
+- Java 8
+- Gradle 4.10.1
+- Android Gradle Plugin 3.3.2
+- Android SDK Platform 26
+- Android Build Tools 28.0.3
+
+The Gradle wrapper included in the repository should be used.
+
+Build with the included Gradle wrapper:
+
+```powershell
+.\gradlew.bat clean assembleDebug --no-daemon
+```
 
 ## Known limitations
 
@@ -140,9 +146,4 @@ Public License version 3.
 This fork retains the same license.
 
 See [COPYING](COPYING).
-Expected size:
-
-`22048 bytes`
-
-The JAR is ignored by Git and is not redistributed in this repository.
 
