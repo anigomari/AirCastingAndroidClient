@@ -1,23 +1,96 @@
-## AirCasting - Share your Air!
+# AirCasting Android Client – AirBeam1 compatibility fork
 
-### About
+> [!IMPORTANT]
+> This is an **unofficial compatibility fork** of the original
+> [HabitatMap/AirCastingAndroidClient](https://github.com/HabitatMap/AirCastingAndroidClient).
+>
+> The original AirCasting application and AirBeam support were developed by HabitatMap, Inc. This fork is based on `release-1.5.10` and contains a small set of compatibility changes intended to make the original first-generation AirBeam (AirBeam1) usable again on modern Android devices.
+>
+> See [CHANGES.md](CHANGES.md) for the modifications made in this fork.
 
-This is the android app for the AirCasting project - the project aims to build a platform for gathering, visualization and sharing of environmental data. To learn more about the platform visit [aircasting.org](http://aircasting.org).
+## About the original project
 
-### Contribute
+AirCasting is a platform for gathering, visualizing and sharing environmental
+data.
 
-Unfortunately due to the fact that AirCasting is working on Google Maps v1, without a previously generated v1 API key you will not be able to run the project. We are planing to switch to Google Maps v2 in the future. If you do have the v1 API key, put it into `res/values/api_keys.xml`, import the project into Android Studio and build with Gradle.
+The original Android application and AirBeam integration were developed by
+HabitatMap.
 
-### Contact
+Original repository:
 
-You can contact the authors by email at [info@habitatmap.org](mailto:info@habitatmap.org).
+https://github.com/HabitatMap/AirCastingAndroidClient
 
-### Thanks
+AirCasting project:
 
-AirCasting uses The YourKit Java Profiler for Performance Tuning
+http://aircasting.org
 
-YourKit is kindly supporting open source projects with its full-featured Java Profiler. YourKit, LLC is the creator of innovative and intelligent tools for profiling Java and .NET applications. Take a look at YourKit's leading software products: [YourKit Java Profiler](http://www.yourkit.com/java/profiler/index.jsp) and [YourKit .NET Profiler](http://www.yourkit.com/.net/profiler/index.jsp).
+## Purpose of this fork
 
-### License
+The original AirBeam communicates with Android through Bluetooth Classic /
+RFCOMM SPP.
 
-The project is licensed under the GPLv3. For more information see COPYING and visit [http://www.gnu.org/licenses/gpl-3.0.html](http://www.gnu.org/licenses/gpl-3.0.html).
+Recent versions of the AirCasting Android application no longer provide working
+support for the first-generation AirBeam.
+
+AirCasting `1.5.10` still contains the original AirBeam1 communication code, but
+building and running that version on a modern Android device requires several
+compatibility fixes because some of its dependencies and Android APIs are now
+obsolete.
+
+The goal of this fork is therefore:
+
+- preserve the original AirBeam1 Bluetooth support;
+- make AirCasting 1.5.10 buildable again;
+- allow AirBeam1 measurements to be displayed on modern Android devices;
+- restore the Graph view without depending on the obsolete Google Maps v1
+  runtime.
+
+This fork is **not intended to be a replacement for the current AirCasting
+application**.
+
+## Tested functionality
+
+Tested successfully with:
+
+- Original first-generation HabitatMap AirBeam / AirBeam1
+- Xiaomi Mi 10T
+- MIUI 14
+- Bluetooth Classic / RFCOMM SPP
+
+Measurements received successfully:
+
+- `AirBeam-PM`
+- `AirBeam-F`
+- `AirBeam-RH`
+
+Tested views:
+
+- Dashboard
+- Graph
+
+## Build requirements
+
+This project is based on an old Android build environment.
+
+Known working setup:
+
+- Java 8
+- Gradle 4.10.1
+- Android Gradle Plugin 3.3.2
+- Android SDK Platform 26
+- Android Build Tools 28.0.3
+
+The Gradle wrapper included in the repository should be used.
+
+## Legacy Google Maps API v1 dependency
+
+AirCasting 1.5.10 depends on the obsolete Google Maps API v1 `maps.jar`.
+
+That binary is **not redistributed in this repository**.
+
+A helper PowerShell script is provided to retrieve the historical Google APIs
+Android SDK package, verify its integrity and extract the required JAR.
+
+From the repository root, run:
+.\scripts\fetch-google-maps-v1.ps1
+

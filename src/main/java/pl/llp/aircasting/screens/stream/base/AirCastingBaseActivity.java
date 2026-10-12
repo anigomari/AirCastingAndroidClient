@@ -12,7 +12,7 @@ import pl.llp.aircasting.screens.common.ToggleAircastingManagerFactory;
 import pl.llp.aircasting.screens.common.sessionState.ViewingSessionsManager;
 import pl.llp.aircasting.screens.common.ApplicationState;
 import pl.llp.aircasting.screens.common.helpers.LocationHelper;
-import pl.llp.aircasting.screens.common.base.RoboMapActivityWithProgress;
+import pl.llp.aircasting.screens.common.base.RoboActivityWithProgress;
 import pl.llp.aircasting.screens.common.helpers.SettingsHelper;
 import pl.llp.aircasting.screens.dashboard.DashboardActivity;
 import pl.llp.aircasting.screens.stream.MeasurementPresenter;
@@ -40,7 +40,7 @@ import static pl.llp.aircasting.util.Constants.PERMISSIONS_REQUEST_FINE_LOCATION
  * navigation arrows
  */
 
-public abstract class AirCastingBaseActivity extends RoboMapActivityWithProgress implements View.OnClickListener, LocationHelper.LocationSettingsListener {
+public abstract class AirCastingBaseActivity extends RoboActivityWithProgress implements View.OnClickListener, LocationHelper.LocationSettingsListener {
     public static final long DELTA = TimeUnit.SECONDS.toMillis(15);
 
     @Inject public Context context;
@@ -103,12 +103,6 @@ public abstract class AirCastingBaseActivity extends RoboMapActivityWithProgress
             registeredReceiver = null;
         }
         eventBus.unregister(this);
-    }
-
-    @Override
-    protected boolean isRouteDisplayed() {
-        // The maps server needs to know if we are displaying any routes
-        return false;
     }
 
     private void initialize() {

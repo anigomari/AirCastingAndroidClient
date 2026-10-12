@@ -280,4 +280,6 @@
   <string name="streaming_alert">Dormant stream alert</string>
   <string name="streaming_alert_summary">Check to receive an email when active fixed sessions go dormant for >60 minutes</string>
     <string name="heat_map_density_warning">CrowdmMap grid cell size must be a number 1-40</string>
+  <string name="com.google.android.geo.API_KEY">DUMMY_KEY_FOR_AIRBEAM1</string>
+  <string name="com.google.android.geo.MAPS_KEY">DUMMY_KEY_FOR_AIRBEAM1</string>
 </resources>
