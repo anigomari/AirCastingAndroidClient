@@ -110,6 +110,36 @@ Expected SHA-1:
 
 `c49be8f6bab271911c80bee6d571bf107d29a369`
 
+## Known limitations
+
+The original Map screen depends on Google Maps API v1, which is obsolete
+and is no longer available as a runtime library on modern Android versions.
+
+This fork focuses on restoring AirBeam1 sensor acquisition, Dashboard
+and Graph functionality.
+
+Map functionality should be considered unsupported.
+
+## Changes
+
+See [CHANGES.md](CHANGES.md) for the detailed technical changes.
+
+## Original project
+
+The original AirCasting application and AirBeam integration were developed
+by HabitatMap, Inc.
+
+Original repository:
+[HabitatMap/AirCastingAndroidClient](https://github.com/HabitatMap/AirCastingAndroidClient)
+
+## License
+
+The original AirCasting Android client is licensed under the GNU General
+Public License version 3.
+
+This fork retains the same license.
+
+See [COPYING](COPYING).
 Expected size:
 
 `22048 bytes`
